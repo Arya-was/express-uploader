@@ -7,7 +7,7 @@ import path from 'path';
 import fs from 'fs';
 
 const app = express()
-const port = 8000 || processs.env.PORT
+const PORT = process.env.PORT || 8080;
 
 // Cretae folder
 if (!fs.existsSync('./public/file')) fs.mkdirSync('./public/file')
@@ -108,6 +108,6 @@ app.use(function (req, res, next) {
     })
 })
 
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`App listening at http://localhost:${PORT}`)
 })
